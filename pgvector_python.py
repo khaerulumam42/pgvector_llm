@@ -1,12 +1,14 @@
 import os
 import pandas as pd
 from typing import List
+from dotenv import load_dotenv
 
 from langchain_nomic import NomicEmbeddings
 from langchain_community.vectorstores.pgvector import DistanceStrategy
 from langchain_community.vectorstores import PGVector
 from langchain.docstore.document import Document
 
+load_dotenv(override=True)
 
 CONNECTION_STRING = PGVector.connection_string_from_db_params(
     driver='psycopg2',
